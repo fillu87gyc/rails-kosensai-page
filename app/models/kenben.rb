@@ -1,0 +1,2 @@
+class Kenben < ApplicationRecord
+end
