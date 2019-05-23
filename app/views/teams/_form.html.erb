@@ -10,12 +10,7 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
+  <%= form.hidden_field :user_id, :value => "1" %>
   <div class="field">
     <%= form.label :team_name %>
     <%= form.text_field :team_name %>
@@ -33,7 +28,7 @@
 
   <div class="field">
     <%= form.label :number_of_people %>
-    <%= form.text_field :number_of_people %>
+    <%= form.number_field :number_of_people %>
   </div>
 
   <div class="field">
@@ -41,6 +36,20 @@
     <%= form.check_box :is_commercial_purpose %>
   </div>
 
+  <div class="field">
+    <%= form.label :kenbens, "検便者リスト" %><br />
+    <%= form.fields_for :kenbens do |kenbens_form| %>
+      <%= kenbens_form.hidden_field :team_id, :value => "1" %>
+      <%= kenbens_form.label :class_name, "クラス名" %>
+      <%= kenbens_form.text_field :class_name %><br />
+      <%= kenbens_form.label :name, "名前" %>
+      <%= kenbens_form.text_field :name %><br />
+      <%= kenbens_form.label :phonetic, "ふりがな" %>
+      <%= kenbens_form.text_field :phonetic %><br />
+      <%= kenbens_form.label :sex, "性別" %>
+      <%= kenbens_form.text_field :sex %><br />
+    <% end %>
+  </div>
   <div class="actions">
     <%= form.submit %>
   </div>
