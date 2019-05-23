@@ -1,0 +1,52 @@
+<%= form_with(model: team, local: true) do |form| %>
+<% if team.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(team.errors.count, "error") %> prohibited this team from being saved:</h2>
+
+  <ul>
+    <% team.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<%= form.hidden_field :user_id, :value => @team.user_id %>
+<div class="field">
+  <%= form.label :team_name %>
+  <%= form.text_field :team_name %>
+</div>
+
+<div class="field">
+  <%= form.label :contents_of_store %>
+  <%= form.text_field :contents_of_store %>
+</div>
+
+<div class="field">
+  <%= form.label :advisor %>
+  <%= form.text_field :advisor %>
+</div>
+
+<div class="field">
+  <%= form.label :number_of_people %>
+  <%= form.number_field :number_of_people %>
+</div>
+
+<div class="field">
+  <%= form.label :is_commercial_purpose %>
+  <%= form.check_box :is_commercial_purpose %>
+</div>
+
+<div class="field">
+  <%= form.label :kenbens, "検便者リスト" %><br />
+
+  <%= form.fields_for :kenbens do |builder| %>
+    <%= render "kenben_fields", f: builder %>
+  <% end %>
+  <%= link_to_add_fields "検便者追加", form, :kenbens %>
+</div>
+
+<div class="actions">
+  <%= form.submit %>
+</div>
+<% end %>
