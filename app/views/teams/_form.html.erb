@@ -11,7 +11,7 @@
 </div>
 <% end %>
 
-<%= form.hidden_field :user_id, :value => "1" %>
+<%= form.hidden_field :user_id, :value => @team.user_id %>
 <div class="field">
   <%= form.label :team_name %>
   <%= form.text_field :team_name %>

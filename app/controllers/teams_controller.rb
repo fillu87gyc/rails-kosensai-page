@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
   before_action :set_team, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:index,:new]
   # GET /teams
   # GET /teams.json
   def index
@@ -16,6 +16,7 @@ class TeamsController < ApplicationController
   def new
     @team = Team.new
     @team.kenbens.build
+    @team.user_id = current_user.id
   end
 
   # GET /teams/1/edit

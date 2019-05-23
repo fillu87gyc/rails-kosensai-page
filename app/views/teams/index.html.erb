@@ -18,7 +18,7 @@
   <tbody>
     <% @teams.each do |team| %>
       <tr>
-        <td><%= team.user %></td>
+        <td><%= team.user.email %></td>
         <td><%= team.team_name %></td>
         <td><%= team.contents_of_store %></td>
         <td><%= team.advisor %></td>
