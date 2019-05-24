@@ -12,6 +12,7 @@
 <% end %>
 
 <%= form.hidden_field :user_id, :value => @team.user_id %>
+
 <div class="field">
   <%= form.label :team_name %>
   <%= form.text_field :team_name %>
@@ -35,6 +36,16 @@
 <div class="field">
   <%= form.label :is_commercial_purpose %>
   <%= form.check_box :is_commercial_purpose %>
+</div>
+
+<div class="field">
+  <%= form.label :is_food_provision %>
+  <%= form.check_box :is_food_provision %>
+</div>
+
+<div class="field">
+  <%= form.label :is_outdoor %>
+  <%= form.check_box :is_outdoor %>
 </div>
 
 <div class="field">
