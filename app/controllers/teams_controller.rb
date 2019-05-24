@@ -1,15 +1,20 @@
 class TeamsController < ApplicationController
   before_action :set_team, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:index,:show,:new]
   # GET /teams
   # GET /teams.json
   def index
+    unless current_user.admin_flg
+      flash[:notice] = "権限がありません"
+      redirect_to '/'
+    end
     @teams = Team.all
   end
 
   # GET /teams/1
   # GET /teams/1.json
   def show
+    redirect_to '/' if params[:id] != current_user.team.id.to_s
   end
 
   # GET /teams/new
@@ -64,16 +69,16 @@ class TeamsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_team
-      @team = Team.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_team
+    @team = Team.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def team_params
-      params.require(:team).permit(
-        :user_id, :team_name, :contents_of_store, :advisor, :number_of_people, :is_commercial_purpose, :is_food_provision, :is_outdoor,
-        kenbens_attributes: [:id, :name, :class_name, :phonetic, :sex, :_destroy]
-      )
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def team_params
+    params.require(:team).permit(
+      :user_id, :team_name, :contents_of_store, :advisor, :number_of_people, :is_commercial_purpose, :is_food_provision, :is_outdoor,
+      kenbens_attributes: [:id, :name, :class_name, :phonetic, :sex, :_destroy]
+    )
+  end
 end
