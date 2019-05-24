@@ -25,7 +25,7 @@
                   <li><a href="users/sign_up">新規登録</a></li>
                   <li><a href="users/sign_in">ログイン</a></li>
                 <% else %>
-                  <li><a href="#"><%= current_user.name %>さん</a></li>
+                  <li><a href="users/edit"><%= current_user.name %>を編集</a></li>
                   <% unless current_user.team.nil? %>
                     <li><a href=" teams/<%= current_user.team.id %> ">団体詳細画面</a></li>
                   <% else %>
