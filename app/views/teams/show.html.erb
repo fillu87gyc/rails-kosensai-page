@@ -26,9 +26,20 @@
 </p>
 
 <p>
-  <strong>Is commercial purpose:</strong>
+  <strong>営利目的ですか:</strong>
   <%= @team.is_commercial_purpose %>
 </p>
+
+<p>
+  <strong>食品提供はしますか :</strong>
+  <%= @team.is_commercial_purpose %>
+</p>
+
+<p>
+  <strong>屋外出店ですか :</strong>
+  <%= @team.is_commercial_purpose %>
+</p>
+
 <hr>
 <h2>検便者</h2>
 <% @team.kenbens.each do |kenben| %>
