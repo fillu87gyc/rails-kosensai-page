@@ -1,8 +1,7 @@
-<p id="notice"><%= notice %></p>
 <h1>団体詳細</h1>
 <p>
   <strong>User:</strong>
-  <%= @team.user.id %>
+  <%= @team.user.name %>
 </p>
 
 <p>
@@ -32,12 +31,12 @@
 
 <p>
   <strong>食品提供はしますか :</strong>
-  <%= @team.is_commercial_purpose %>
+  <%= @team.is_food_provision %>
 </p>
 
 <p>
   <strong>屋外出店ですか :</strong>
-  <%= @team.is_commercial_purpose %>
+  <%= @team.is_outdoor %>
 </p>
 
 <hr>
@@ -47,4 +46,4 @@
 <% end %>
 
 <%= link_to 'Edit', edit_team_path(@team) %> |
-<%= link_to 'Back', teams_path %>
+<%= link_to 'Back', "/" %>
