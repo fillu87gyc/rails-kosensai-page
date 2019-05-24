@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<h1>団体詳細</h1>
 <p>
   <strong>User:</strong>
   <%= @team.user.id %>
@@ -29,6 +29,11 @@
   <strong>Is commercial purpose:</strong>
   <%= @team.is_commercial_purpose %>
 </p>
+<hr>
+<h2>検便者</h2>
+<% @team.kenbens.each do |kenben| %>
+  <p> <%= kenben.phonetic %><br/>
+<% end %>
 
 <%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back', teams_path %>
