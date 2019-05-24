@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_24_075534) do
+ActiveRecord::Schema.define(version: 2019_05_24_084359) do
 
   create_table "kenbens", force: :cascade do |t|
     t.string "class_name"
@@ -29,9 +29,11 @@ ActiveRecord::Schema.define(version: 2019_05_24_075534) do
     t.string "contents_of_store"
     t.string "advisor"
     t.string "number_of_people"
-    t.boolean "is_commercial_purpose"
+    t.boolean "is_commercial_purpose", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_food_provision", default: false, null: false
+    t.boolean "is_outdoor", default: false, null: false
     t.index ["user_id"], name: "index_teams_on_user_id"
   end
 
