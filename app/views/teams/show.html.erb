@@ -1,49 +1,27 @@
+<div class="container mx-auto">
+
 <h1>団体詳細</h1>
-<p>
-  <strong>User:</strong>
-  <%= @team.user.name %>
-</p>
-
-<p>
-  <strong>Team name:</strong>
-  <%= @team.team_name %>
-</p>
-
-<p>
-  <strong>Contents of store:</strong>
-  <%= @team.contents_of_store %>
-</p>
-
-<p>
-  <strong>Advisor:</strong>
-  <%= @team.advisor %>
-</p>
-
-<p>
-  <strong>Number of people:</strong>
-  <%= @team.number_of_people %>
-</p>
-
-<p>
-  <strong>営利目的ですか:</strong>
-  <%= @team.is_commercial_purpose %>
-</p>
-
-<p>
-  <strong>食品提供はしますか :</strong>
-  <%= @team.is_food_provision %>
-</p>
-
-<p>
-  <strong>屋外出店ですか :</strong>
-  <%= @team.is_outdoor %>
-</p>
-
+<div class="row">
+  <div class="col-md-8">
+    <table class="table table-hover">
+      <tr><td>代表学生</td><td> <%= @team.user.class_name + " : " + @team.user.name %> </td></tr>
+      <tr><td>団体名</td><td> <%= @team.team_name %> </td></tr>
+      <tr><td>出店内容</td><td> <%= @team.contents_of_store %> </td></tr>
+      <tr><td>顧問の先生</td><td> <%= @team.advisor %>先生 </td></tr>
+      <tr><td>参加人数</td><td> <%= @team.number_of_people %>人 </td></tr>
+      <tr><td>利益が発生する可能性</td><td> <%= @team.is_commercial_purpose ? "はい" : "いいえ" %> </td></tr>
+      <tr><td>食品提供はありますか</td><td> <%= @team.is_food_provision ? "あります" : "ありません" %></td></tr>
+      <tr><td>屋外出店ですか</td><td> <%= @team.is_outdoor ? "屋外出店です" : "屋内出店です" %> </td></tr>
+    </table>
+  </div>
+</div>
 <hr>
 <h2>検便者</h2>
 <% @team.kenbens.each do |kenben| %>
-  <p> <%= kenben.phonetic %><br/>
+  <div class="show-kenben">
+    <%= kenben.class_name %> : <%= kenben.name %> ( <%= kenben.phonetic %> ) <%= kenben.age %> 歳/<%= kenben.sex  %>
+  </div>
 <% end %>
-
+</div>
 <%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back', "/" %>
