@@ -10,8 +10,10 @@
   </head>
 
   <body class='<%= controller.controller_name %>'>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% unless notice.blank? and alert.blank? %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
