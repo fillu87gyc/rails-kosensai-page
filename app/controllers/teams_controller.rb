@@ -78,7 +78,7 @@ class TeamsController < ApplicationController
   def team_params
     params.require(:team).permit(
       :user_id, :team_name, :contents_of_store, :advisor, :number_of_people, :is_commercial_purpose, :is_food_provision, :is_outdoor,
-      kenbens_attributes: [:id, :name, :class_name, :phonetic, :sex, :_destroy]
+      kenbens_attributes: [:id, :name, :class_name, :phonetic, :sex,:age, :_destroy]
     )
   end
 end
