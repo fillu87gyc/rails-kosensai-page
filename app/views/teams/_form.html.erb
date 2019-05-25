@@ -1,63 +1,72 @@
-<%= form_with(model: team, local: true) do |form| %>
 <% if team.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(team.errors.count, "error") %> prohibited this team from being saved:</h2>
+  <div id="error_explanation">
+    <h2><%= pluralize(team.errors.count, "error") %> prohibited this team from being saved:</h2>
 
-  <ul>
-    <% team.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
+    <ul>
+      <% team.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="card">
+  <div class="card-header">団体登録</div>
+  <div class="card-body">
+    <%= form_with(model: team, local: true) do |form| %>
+
+      <%= form.hidden_field :user_id, :value => @team.user_id %>
+
+      <div class="form-group">
+        <%= form.label :team_name %>
+        <%= form.text_field :team_name , :class=>"form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :contents_of_store %>
+        <%= form.text_field :contents_of_store , :class=>"form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :advisor %>
+        <%= form.text_field :advisor, :class=>"form-control"  %>
+      </div>
+
+      <div class="no-gutters">
+        <div class="form-group col-md-4">
+          <%= form.label :number_of_people %>
+          <%= form.number_field :number_of_people , :class=>"form-control" %>
+        </div>
+      </div>
+      <div class="boxes">
+        <div class="form-group">
+          <%= form.check_box :is_commercial_purpose %>
+          <%= form.label :is_commercial_purpose %>
+        </div>
+
+        <div class="form-group">
+          <%= form.check_box :is_food_provision %>
+          <%= form.label :is_food_provision %>
+        </div>
+
+        <div class="form-group">
+          <%= form.check_box :is_outdoor %>
+          <%= form.label :is_outdoor %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :kenbens, "検便者リスト" %><br />
+
+        <%= form.fields_for :kenbens do |builder| %>
+          <%= render "kenben_fields", f: builder %>
+        <% end %>
+        <%= link_to_add_fields "検便者追加", form, :kenbens %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
     <% end %>
-  </ul>
+  </div>
 </div>
-<% end %>
-
-<%= form.hidden_field :user_id, :value => @team.user_id %>
-
-<div class="field">
-  <%= form.label :team_name %>
-  <%= form.text_field :team_name %>
-</div>
-
-<div class="field">
-  <%= form.label :contents_of_store %>
-  <%= form.text_field :contents_of_store %>
-</div>
-
-<div class="field">
-  <%= form.label :advisor %>
-  <%= form.text_field :advisor %>
-</div>
-
-<div class="field">
-  <%= form.label :number_of_people %>
-  <%= form.number_field :number_of_people %>
-</div>
-
-<div class="field">
-  <%= form.label :is_commercial_purpose %>
-  <%= form.check_box :is_commercial_purpose %>
-</div>
-
-<div class="field">
-  <%= form.label :is_food_provision %>
-  <%= form.check_box :is_food_provision %>
-</div>
-
-<div class="field">
-  <%= form.label :is_outdoor %>
-  <%= form.check_box :is_outdoor %>
-</div>
-
-<div class="field">
-  <%= form.label :kenbens, "検便者リスト" %><br />
-
-  <%= form.fields_for :kenbens do |builder| %>
-    <%= render "kenben_fields", f: builder %>
-  <% end %>
-  <%= link_to_add_fields "検便者追加", form, :kenbens %>
-</div>
-
-<div class="actions">
-  <%= form.submit %>
-</div>
-<% end %>
