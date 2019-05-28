@@ -1,7 +1,8 @@
 // Place all the styles related to the teams controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body.teams{
+body.teams
+{
   @import 'bootstrap';
   @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
   .card{
@@ -75,4 +76,4 @@ body.teams{
   .kenben-body{
     margin-bottom: 20px;
   }
-  }
+}

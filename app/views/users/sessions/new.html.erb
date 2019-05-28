@@ -1,14 +1,13 @@
 <h2>Log in</h2>
-<style type="text/css">
-
-</style>
 <fieldset>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="iconUser"></div>
-    <input autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]" id="user_email" placeholder="Username" required/>
-    <div class="iconPassword"></div>
-    <input autocomplete="current-password" type="password" name="user[password]" id="user_password" placeholder="Password" required/>
-    <input type="submit" value="Enter">
-    <%= render "users/shared/links" %>
+  <div class="iconUser"></div>
+  <input autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]" id="user_email"
+    placeholder="Username" required />
+  <div class="iconPassword"></div>
+  <input autocomplete="current-password" type="password" name="user[password]" id="user_password" placeholder="Password"
+    required />
+  <input type="submit" value="Enter">
+  <%= render "users/shared/links" %>
   <%end %>
 </fieldset>
