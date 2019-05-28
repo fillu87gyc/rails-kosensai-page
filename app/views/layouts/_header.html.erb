@@ -19,7 +19,11 @@
             <li class="<%= menu_is_current 'news' %>"><a href="/news"   ><strong>ニュース</strong><br /><span>News</span></a></li>
             <li class="<%= menu_is_current 'shop' %>"><a href="/shop"   ><strong>出店内容</strong><br /><span>Shop</span></a></li>
             <li class="<%= menu_is_current 'access' %>"><a href="/access" ><strong>アクセス</strong><br /><span>Access</span></a></li>
-            <li class="<%= menu_is_current_team %>"><a href="/teams/<%= current_user.team.id %> " class=" <%= menu_is_current '' %> "><strong>アカウント</strong><br /><span>Account</span></a>
+            <% if user_signed_in?  %>
+            <li class="<%= menu_is_current_team %>"><a href="/teams/<%= current_user.team.id %>"><strong>アカウント</strong><br /><span>Account</span></a>
+            <% else %>
+            <li class="<%= menu_is_current_team %>"><a href="/users/sign_in"><strong>アカウント</strong><br /><span>Account</span></a>
+            <% end %>
               <ul class="sub-menu">
                 <% if !user_signed_in? %>
                   <li><a href="/users/sign_up">新規登録</a></li>
