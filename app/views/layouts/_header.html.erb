@@ -9,29 +9,29 @@
         <a class="menu" id="menu"><span>MENU</span></a>
         <div class="panel">
           <ul id="topnav">
-            <li class="current-menu-item"><a href="/index.html"><strong>トップページ</strong><br /><span>Top</span></a></li>
-            <li><a href="sample.html"><strong>高専祭とは</strong><br /><span>About</span></a>
+            <li class=" <%= menu_is_current 'index' %> "><a href="/index.html"><strong>トップページ</strong><br /><span>Top</span></a></li>
+            <li><a href="/about" class=" <%= menu_is_current 'news' %>" ><strong>高専祭とは</strong><br /><span>About</span></a>
               <ul class="sub-menu">
                 <li><a href="sample.html">代表者メッセージ</a></li>
                 <li><a href="sample.html">昨年度の高専祭</a></li>
               </ul>
             </li>
-            <li><a href="sample.html"><strong>ニュース</strong><br /><span>News</span></a></li>
-            <li><a href="sample.html"><strong>出店内容</strong><br /><span>Shop</span></a></li>
-            <li><a href="sample.html"><strong>アクセス</strong><br /><span>Access</span></a></li>
-            <li><a href="sample.html"><strong>アカウント</strong><br /><span>Account</span></a>
+            <li class="<%= menu_is_current 'news' %>"><a href="/news"   ><strong>ニュース</strong><br /><span>News</span></a></li>
+            <li class="<%= menu_is_current 'shop' %>"><a href="/shop"   ><strong>出店内容</strong><br /><span>Shop</span></a></li>
+            <li class="<%= menu_is_current 'access' %>"><a href="/access" ><strong>アクセス</strong><br /><span>Access</span></a></li>
+            <li class="<%= menu_is_current_team %>"><a href="/teams/<%= current_user.team.id %> " class=" <%= menu_is_current '' %> "><strong>アカウント</strong><br /><span>Account</span></a>
               <ul class="sub-menu">
                 <% if !user_signed_in? %>
-                <li><a href="/users/sign_up">新規登録</a></li>
-                <li><a href="/users/sign_in">ログイン</a></li>
+                  <li><a href="/users/sign_up">新規登録</a></li>
+                  <li><a href="/users/sign_in">ログイン</a></li>
                 <% else %>
-                <li><a href="/users/edit"><%= current_user.name %>を編集</a></li>
-                <% unless current_user.team.nil? %>
-                <li><a href="/teams/<%= current_user.team.id %> ">団体詳細画面</a></li>
-                <% else %>
-                <li><a href="/teams/new">団体登録</a></li>
-                <% end %>
-                <li style="padding-top: 15px"><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></li>
+                  <li><a href="/users/edit"><%= current_user.name %>を編集</a></li>
+                  <% unless current_user.team.nil? %>
+                    <li><a href="/teams/<%= current_user.team.id %> ">団体詳細画面</a></li>
+                  <% else %>
+                    <li><a href="/teams/new">団体登録</a></li>
+                  <% end %>
+                  <li style="padding-top: 15px"><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></li>
                 <% end %>
               </ul>
             </li>
