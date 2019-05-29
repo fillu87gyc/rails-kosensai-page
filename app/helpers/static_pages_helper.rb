@@ -10,4 +10,9 @@ module StaticPagesHelper
       'current-menu-item'
     end
   end
+  def user_status
+    if user_signed_in?
+       current_user.team != nil
+    end
+  end
 end
