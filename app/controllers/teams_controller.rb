@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
   before_action :set_team, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:index,:show,:new]
+  before_action :authenticate_user!
   # GET /teams
   # GET /teams.json
   def index
@@ -14,7 +14,7 @@ class TeamsController < ApplicationController
   # GET /teams/1
   # GET /teams/1.json
   def show
-    redirect_to '/' if params[:id] != current_user.team.id.to_s
+    
   end
 
   # GET /teams/new
@@ -26,6 +26,7 @@ class TeamsController < ApplicationController
 
   # GET /teams/1/edit
   def edit
+
   end
 
   # POST /teams
@@ -72,6 +73,10 @@ class TeamsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_team
     @team = Team.find(params[:id])
+    unless params[:id] == current_user.team.id.to_s or current_user.admin_flg
+      flash[:notice] = "権限がありません"
+      redirect_to '/'
+    end
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
