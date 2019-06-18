@@ -16,7 +16,6 @@
         -webkit-transition: opacity 1s;
     }
     .login {
-        background: #004A3E;
         padding: 20px 0;
         /*PADDING TODOS OS LADOS DE 20PX*/
         font-size: 140%;
@@ -25,7 +24,6 @@
         color: #fff;
     }
     form {
-        background: #f0f0f0;
         padding: 6% 4%;
     }
     input[type="password"] {
@@ -37,30 +35,6 @@
         font-family: 'Open Sans', sans-serif;
         font-size: 95%;
         color: #555;
-    }
-    .iconPassword {
-        width: 20px;
-        height: 20px;
-        background-color: #004A3E;
-        float: left;
-        padding: 4% 4% 4% 4%;
-        margin-bottom: 4%;
-        background-repeat: no-repeat;
-        background-image: url(https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f09c-32.png);
-        background-position: center;
-        border: 1px solid #ccc;
-    }
-    .iconUser {
-        width: 20px;
-        height: 20px;
-        background-color: #004A3E;
-        float: left;
-        padding: 4% 4% 4% 4%;
-        margin-bottom: 4%;
-        background-repeat: no-repeat;
-        background-image: url(https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f007-32.png);
-        background-position: center;
-        border: 1px solid #ccc;
     }
     input[type="email"] {
         width: 76%;
@@ -97,7 +71,6 @@
     input[type="submit"]:hover {
         background: #53B9A8;
     }
-    ::-webkit-input-placeholder {}
     html,
     body {
         width: 100%;
