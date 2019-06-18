@@ -1,1 +1,69 @@
+h1#title {
+    margin: 0 0 30px;
+    padding: 0 0 15px;
+    font-size: 1.6rem;
+    padding: 0.25em 0.5em;
+    color: #494949;
+    background: transparent;
+    border-left: solid 5px #BCA5A5;
+}
 
+@import 'bootstrap';
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+div.show_all_table {
+    .table {
+        background: transparent;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-size: 85%;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    .table thead tr th,
+    .table thead tr td {
+        border: 1px solid #cccccc;
+        border-left-color: transparent;
+        border-top-color: transparent;
+        font-weight: normal;
+        letter-spacing: .001em;
+        line-height: 14px;
+        padding: 10px 10px 5px 5px;
+        text-align: right;
+        vertical-align: bottom;
+    }
+    .table thead tr th:first-child,
+    .table thead tr td:first-child {
+        padding-right: 0;
+        text-align: left;
+    }
+    .table thead tr th:last-child,
+    .table thead tr td:last-child {
+        border-right-color: transparent;
+    }
+    .table tbody tr {
+        border: 1px solid #fdfdfd;
+    }
+    .table tbody tr th,
+    .table tbody tr td {
+        border: 1px solid #cccccc;
+        border-left-color: transparent;
+        border-top-color: transparent;
+        font-weight: normal;
+        padding: 4px 10px;
+        text-align: right;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .table tbody tr th:first-child,
+    .table tbody tr td:first-child {
+        text-align: left;
+    }
+    .table tbody tr th:last-child,
+    .table tbody tr td:last-child {
+        border-right-color: transparent;
+    }
+    .table-striped tbody tr:nth-child(odd) {
+        background-color: #f6f6f6;
+    }
+}
