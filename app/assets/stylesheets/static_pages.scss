@@ -7,7 +7,11 @@ h1#title {
     background: transparent;
     border-left: solid 5px #BCA5A5;
 }
-
+.box{
+  h3{
+    font-size: 12px
+  }
+}
 @import 'bootstrap';
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 div.show_all_table {
