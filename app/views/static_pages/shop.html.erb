@@ -9,17 +9,19 @@
           <th>名前</th>
           <th>出店内容</th>
           <th>出店場所</th>
+          <th>食品提供</th>
         </tr>
       </thead>
       <tbody>
         <% @shops = Team.all  %>
-        <% @shops.sort{|a,b| a.id <=> b.id} %>
+        <% @shops.sort{|a,b| a.id <=> b.id } %>
         <% @shops.each do |shop| %>
         <tr>
           <th scope="row"><%= shop.id %></th>
           <td><%= shop.team_name %> </td>
           <td><%= shop.contents_of_store %></td>
-          <td><%= shop.is_food_provision ? "屋外出店" : "学校内" %></td>
+          <td><%= shop.is_outdoor ? "屋外出店" : "学校内" %></td>
+          <td><%= shop.is_food_provision ? "あり" : "なし" %></td>
         </tr>
         <% end %>
       </tbody>
