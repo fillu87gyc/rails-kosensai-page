@@ -43,7 +43,8 @@
 
       <div class="form-group text-center">
         <div class="col-md-10">
-          <%= f.submit "Sign up", :class=>"btn btn-primary" %>
+          <%= f.label '新規登録は終了しました' %><br />
+          <%= f.submit "Sign up",:disabled=>true, :class=>"btn btn-secondary" %>
         </div>
       </div>
     <% end %>
