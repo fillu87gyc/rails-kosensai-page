@@ -9,6 +9,7 @@
           <th>名前</th>
           <th>出店内容</th>
           <th>出店場所</th>
+          <th>食品提供</th>
         </tr>
       </thead>
       <tbody>
@@ -20,6 +21,7 @@
           <td><%= shop.team_name %> </td>
           <td><%= shop.contents_of_store %></td>
           <td><%= shop.is_outdoor ? "屋外出店" : "学校内" %></td>
+          <td><%= shop.is_food_provision ? "あり" : "なし" %></td>
         </tr>
         <% end %>
       </tbody>
