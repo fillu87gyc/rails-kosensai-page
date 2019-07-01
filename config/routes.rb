@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'access' => 'static_pages#access'
   get 'news' => 'static_pages#news'
   get 'shop'  => 'static_pages#shop'
-  get 'download/:id', to: 'static_pages#download'
+  get 'chousasho/download/:id', to: 'static_pages#download_chouri'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   resources :teams

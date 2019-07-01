@@ -14,11 +14,11 @@ class StaticPagesController < ApplicationController
   def shop
   end
 
-  def download
+  def download_chouri
     if params[:id] == '2'
-      download_file_name = 'public/docs/sample.xlsx'
+      download_file_name = 'public/chousasho/sample.xlsx'
     else
-      download_file_name = 'public/docs/template.xlsx'
+      download_file_name = 'public/chousasho/template.xlsx'
     end
     send_file download_file_name
   end
