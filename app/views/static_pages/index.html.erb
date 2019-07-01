@@ -23,11 +23,15 @@
     </article>
     <article class="grid">
       <div class="box">
-        <h3>調理調査書の募集</h3>
+        <h3>調理調査書(夏休み明けまで)</h3>
         <p class="img"><%= image_tag "chousasho.jpg", :size=>"220x220"%></p>
-        <p>調理調査書の提出方法は、GoogleDriveの共有フォルダへのアップロードとします。詳しくは以下のリンク先のサンプルや注意事項を確認してください。<strong>締切りは夏休み明け程度を予定しています</strong></p>
-        <p class="readmore"><a href="#">GoogleDrive(工事中)</a></p>
-        <p class="readmore"><a href="#">注意事項(工事中)</a></p>
+        <p>調理調査書の提出方法は、OneDriveの共有フォルダへのアップロードとします。詳しくは以下のリンク先のサンプルや注意事項を確認してください。<strong>ログインするとリンクが有効化されます</strong></p>
+        <% if user_signed_in?%>
+          <p class="readmore"><a href="https://kosenjp-my.sharepoint.com/:f:/g/personal/s1500604_sendai_kosen-ac_jp/EsKEdWGQ7MpFou_OOw2rxmsB1_H2GjRRmNaw6vOjiG2P1A?e=OTfQ46">OneDrive</a></p>
+        <% else %>
+          <p class="readmore"><a href="/users/sign_in">ログインしてください</a></p>
+        <% end %>
+        <p class="readmore"><a href="/check.html">注意事項</a></p>
       </div>
     </article>
     <article class="grid">
