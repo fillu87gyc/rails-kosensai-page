@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
   def access
   end
 
-  def news
+  def timetable
   end
 
   def shop

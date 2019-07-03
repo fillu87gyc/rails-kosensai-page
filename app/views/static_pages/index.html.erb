@@ -20,7 +20,7 @@
         <p class="img"><%= image_tag "kenben.jpg", :size=>"220x220"%></p>
         <p>登録団体のなかで検便申請が終わっていない団体は期限内に登録するようにお願いします</p>
         <% if user_signed_in? %>
-          <% if !current_user.team.nil?%>
+          <% unless current_user.team.nil?%>
             <p class="readmore"><a href="/teams/<%= current_user.team.id %>/edit" target="_blank">検便申請を追加する</a></p>
           <% end %>
         <% end %>
@@ -38,7 +38,7 @@
         <% else %>
           <p class="readmore"><a href="/users/sign_in">ログインしてください</a></p>
         <% end %>
-        <p class="readmore"><a href="/chousasho/chouri.html" target="_blank">注意事項</a></p>
+        <p class="readmore"><a href="/chousasho/check.html" target="_blank">注意事項</a></p>
       </div>
     </article>
     <article class="grid">

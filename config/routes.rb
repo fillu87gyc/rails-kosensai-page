@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'index' => 'static_pages#index'
   get 'about' => 'static_pages#about'
   get 'access' => 'static_pages#access'
-  get 'news' => 'static_pages#news'
+  get 'timetable' => 'static_pages#timetable'
   get 'shop'  => 'static_pages#shop'
   get 'chousasho/download/:id', to: 'static_pages#download_chouri'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
