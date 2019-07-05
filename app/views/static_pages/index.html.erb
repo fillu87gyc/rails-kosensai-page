@@ -1,56 +1,26 @@
-<div class="container">
-  <div class="raw">
+<div class="container-fluid">
+  <div class="row">
     <%= image_tag "banners/mainImg.jpg", :class => "img-fluid" %>
   </div>
-
-  <div class="raw">
-    <div class="col-md-6 col-lg-3">
-      <h3>団体登録を締めきりました(7/1)</h3>
-      <%= image_tag "shimekiri.jpg", :class => "img-fluid" %>
-      <p>登録済みの団体は検便者の申請のみ行うことができます。出店内容に変更のある団体は庶務部長へメールで問い合わせてください</p>
+  <div class="row">
+    <div class="col-md-6 col-lg-3 bg-primary">
+      a
     </div>
-    <div class="col-md-6 col-lg-3">
-      <h3>検便申請の受け付け(締切りJST8/4まで)</h3>
-      <%= image_tag "kenben.jpg", :class => "img-fluid" %>
-      <p>登録団体のなかで検便申請が終わっていない団体は期限内に登録するようにお願いします</p>
-      <% if user_signed_in? %>
-        <% unless current_user.team.nil? %>
-          <p class="readmore"><a href="/teams/<%= current_user.team.id %>/edit" target="_blank">検便申請を追加する</a></p>
-        <% end %>
-      <% end %>
-      <p class="readmore"><a href="/kenben/check.html" target="_blank">注意事項</a></p>
+    <div class="col-md-6 col-lg-3 bg-success">
+      b
     </div>
-    <div class="col-md-6 col-lg-3">
-      <h3>調理調査書(夏休み明けまで)</h3>
-      <%= image_tag "chousasho.jpg", :class => "img-fluid" %>
-      <p>調理調査書の提出方法は、OneDriveの共有フォルダへのアップロードとします。詳しくは以下のリンク先のサンプルや注意事項を確認してください。<strong>ログインするとリンクが有効化されます</strong>
-        <% if user_signed_in? %>
-        <p class="readmore">
-          <a href="https://kosenjp-my.sharepoint.com/:f:/g/personal/s1500604_sendai_kosen-ac_jp/EsKEdWGQ7MpFou_OOw2rxmsB1_H2GjRRmNaw6vOjiG2P1A?e=OTfQ46">OneDrive</a>
-        </p>
-      <% else %>
-        <p class="readmore"><a href="/users/sign_in">ログインしてください</a></p>
-      <% end %>
-      <p class="readmore"><a href="/chousasho/check.html" target="_blank">注意事項</a></p>
+    <div class="col-md-6 col-lg-3 bg-info">
+      c
     </div>
-    <div class="col-md-6 col-lg-3">
-      <h3>サークルカット(夏休み明けまで)</h3>
-      <%= image_tag "Circlecut.jpg", :class => "img-fluid" %>
-      <p>夏休み明けをもって締めきります.詳細は以下の注意事項を参照してください</p>
-      <p class="readmore"><a href="/CircleCut/check.html" target="_blank">注意事項</a></p>
+    <div class="col-md-6 col-lg-3 bg-primary">
+      d
     </div>
   </div>
-  <!--行1-->
   <div class="row">
-    <!--10列幅分のボックス-->
     <div class="col-md-10 bg-primary">10列</div>
   </div>
-
-  <!--行2-->
   <div class="row">
-    <!--7列幅分のボックス-->
     <div class="col-md-7 bg-success">7列</div>
-    <!--5列幅分のボックス-->
     <div class="col-md-5 bg-info">5列</div>
   </div>
 </div>
