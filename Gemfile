@@ -70,4 +70,5 @@ gem 'cancancan'
 gem 'rails_admin'
 gem 'rb-readline'
 gem 'jquery-turbolinks'
-gem 'bootstrap'
+gem 'jquery-rails'   # Rails5移行必ず導入する
+gem 'jquery-ui-rails' #　上と同様
