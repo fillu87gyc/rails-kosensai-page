@@ -726,9 +726,15 @@ img.alignleft {
     }
     #sub .grid h3 {
         padding: 10px 5px
-    }
+    }5
 }
 p{
     margin-bottom: 0rem;
 }
  */
+body.static_pages {
+  .img-full{
+    width: 100%;
+    height: auto;
+  }
+}
