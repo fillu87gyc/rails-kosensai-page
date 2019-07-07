@@ -23,4 +23,9 @@ module ApplicationHelper
   def user_session
     current_user && warden.session(:user)
   end
+  def has_team?
+    if user_signed_in?
+      !current_user.team.nil?
+    end
+  end
 end
