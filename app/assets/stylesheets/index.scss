@@ -1,3 +1,5 @@
+/*
+
 body {
     color: #555;
     font: 12px verdana, "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
@@ -724,8 +726,17 @@ img.alignleft {
     }
     #sub .grid h3 {
         padding: 10px 5px
-    }
+    }5
 }
 p{
     margin-bottom: 0rem;
 }
+ */
+body.static_pages {
+  .img-full {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
