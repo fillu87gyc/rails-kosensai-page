@@ -2,15 +2,16 @@
   <div class="row">
     <%= image_tag '/mainImg.jpg', :class => 'img-full' %>
   </div>
+  <br/>
   <div class="row">
     <div class="col-lg-3 col-md-6 col-xs-12">
       <h3>団体登録を締めきりました(7/1)</h3>
-      <p class="img"><%= image_tag "shimekiri.jpg", :class => "img-fluid" %></p>
+      <p class="img"><%= image_tag "shimekiri.jpg", :class => "img-fluid img-full" %></p>
       <p>登録済みの団体は検便者の申請のみ行うことができます。出店内容に変更のある団体は庶務部長へメールで問い合わせてください</p>
     </div>
     <div class="col-lg-3 col-md-6 col-xs-12">
       <h3>検便申請の受け付け(締切りJST8/4まで)</h3>
-      <p class="img"><%= image_tag "kenben.jpg", :class => "img-fluid" %></p>
+      <p class="img"><%= image_tag "kenben.jpg", :class => "img-fluid img-full" %></p>
       <p>登録団体のなかで検便申請が終わっていない団体は期限内に登録するようにお願いします</p>
       <% if user_signed_in? %>
         <% unless current_user.team.nil? %>
@@ -21,7 +22,7 @@
     </div>
     <div class="col-lg-3 col-md-6 col-xs-12">
       <h3>調理調査書(夏休み明けまで)</h3>
-      <p class="img"><%= image_tag "chousasho.jpg", :class => "img-fluid" %></p>
+      <p class="img"><%= image_tag "chousasho.jpg", :class => "img-fluid img-full" %></p>
       <p>調理調査書の提出方法は、OneDriveの共有フォルダへのアップロードとします。詳しくは以下のリンク先のサンプルや注意事項を確認してください。<strong>ログインするとリンクが有効化されます</strong>
       </p>
       <% if user_signed_in? %>
@@ -35,37 +36,10 @@
     </div>
     <div class="col-lg-3 col-md-6 col-xs-12">
       <h3>サークルカット(夏休み明けまで)</h3>
-      <p class="img"><%= image_tag "Circlecut.jpg", :class => "img-fluid" %></p>
+      <p class="img"><%= image_tag "Circlecut.jpg", :class => "img-fluid img-full" %></p>
       <p>夏休み明けをもって締めきります.詳細は以下の注意事項を参照してください</p>
       <p class="readmore"><a href="/CircleCut/check.html" target="_blank">注意事項</a></p>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-10 bg-primary">10列</div>
-  </div>
-  <div class="row">
-    <div class="col-md-7 bg-success">7列</div>
-    <div class="col-md-5 bg-info">5列</div>
-  </div>
 </div>
 
-<footer id="footer">
-  <hr>
-  <div class="inner">
-    <section class="gridWrapper">
-      <article class="grid">
-        <p class="logo">
-          <a href="index.html" title="ホームページサンプル株式会社" rel="home">高専祭HP<br/><span>National Instisute of Tehnology</span></a>
-        </p>
-      </article>
-      <article class="grid">
-        <p class="tel"><span>メール:</span> shomu.sf@hirose.nitech-sendai.jp <br/>(高専祭実行委員会 庶務部長行)</p>
-        <p class="open">登録情報の確認・パスワードが忘れたなどの際にお問い合わせください</p>
-      </article>
-      <article class="grid copyright">
-        Copyright(c) 2016 ホームページサンプル株式会社 All Rights Reserved. Design by <a href="http://f-tpl.com" target="_blank"
-                                                                           rel="nofollow">http://f-tpl.com</a>
-      </article>
-    </section>
-  </div>
-</footer>
