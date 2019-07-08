@@ -1,7 +1,6 @@
 <% if team.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(team.errors.count, "error") %> prohibited this team from being saved:</h2>
-
     <ul>
       <% team.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -9,10 +8,11 @@
     </ul>
   </div>
 <% end %>
-
 <div class="card" id="wrapper">
   <div class="card-header">
-    <h4>団体登録(修正する際にはshomu.sf@hirose.nitech-sendai.jpへ)</h4>
+    <h4>
+      団体登録(修正する際にはshomu.sf@hirose.nitech-sendai.jpへ)
+    </h4>
   </div>
   <div class="card-body">
     <%= form_with(model: team, local: true) do |form| %>
@@ -21,20 +21,20 @@
 
       <div class="form-group">
         <h6>団体名</h6>
-        <%= form.label :team_name, "「団体名(所属)」の形式が好ましい"%>
-        <%= form.text_field :team_name ,readonly: true, :class=>"form-control", :placeholder=>"例：やきとりーず(IS2有志)" %>
+        <%= form.label :team_name, "「団体名(所属)」の形式が好ましい" %>
+        <%= form.text_field :team_name, readonly: true, :class => "form-control", :placeholder => "例：やきとりーず(IS2有志)" %>
       </div>
 
       <div class="form-group">
         <h6>出店内容</h6>
         <%= form.label :contents_of_store, "販売・展示を行う予定のもの" %>
-        <%= form.text_field :contents_of_store,readonly: true , :class=>"form-control" , :placeholder=>"例：焼き鳥と飲み物の販売"%>
+        <%= form.text_field :contents_of_store, readonly: true, :class => "form-control", :placeholder => "例：焼き鳥と飲み物の販売" %>
       </div>
 
       <div class="form-group">
         <h6>顧問の先生</h6>
         <%= form.label :advisor, "フルネームで「先生」をつけないで記入" %>
-        <%= form.text_field :advisor,readonly: true, :class=>"form-control" , :placeholder=>"例：山田 花子" %>
+        <%= form.text_field :advisor, readonly: true, :class => "form-control", :placeholder => "例：山田 花子" %>
       </div>
 
       <div class="no-gutters">
@@ -46,18 +46,18 @@
       </div>
       <div class="boxes">
         <div class="form-group">
-          <%= form.check_box :is_commercial_purpose,{:disabled => true} %>
-          <%= form.label :is_commercial_purpose,"利益が発生する可能性がありますか"%>
+          <%= form.check_box :is_commercial_purpose, {:disabled => true} %>
+          <%= form.label :is_commercial_purpose, "利益が発生する可能性がありますか" %>
         </div>
 
         <div class="form-group">
-          <%= form.check_box :is_food_provision,{:disabled => true}  %>
-          <%= form.label :is_food_provision ,"食品提供を行いますか(飲み物を含む)"%>
+          <%= form.check_box :is_food_provision, {:disabled => true} %>
+          <%= form.label :is_food_provision, "食品提供を行いますか(飲み物を含む)" %>
         </div>
 
         <div class="form-group">
-          <%= form.check_box :is_outdoor,{:disabled => true}%>
-          <%= form.label :is_outdoor,"屋外出店を希望していますか" %>
+          <%= form.check_box :is_outdoor, {:disabled => true} %>
+          <%= form.label :is_outdoor, "屋外出店を希望していますか" %>
         </div>
       </div>
       <div class="row">
@@ -73,7 +73,7 @@
       <%= link_to_add_fields "検便者追加(できない場合は再読み込み(F5)してください)", form, :kenbens %>
 
       <div class="form-group text-center">
-        <%= form.submit "団体登録", :class=>"btn btn-primary" %>
+        <%= form.submit "団体登録", :class => "btn btn-primary" %>
       </div>
     <% end %>
   </div>
