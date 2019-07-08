@@ -40,8 +40,8 @@
       <div class="no-gutters">
         <h6>参加人数</h6>
         <div class="form-group col-md-4">
-          <%= form.label :number_of_people, "実際に調理しない人も含む"%>
-          <%= form.number_field :number_of_people ,readonly: true, :class=>"form-control", :placeholder=>"例：5" %>
+          <%= form.label :number_of_people, "実際に調理しない人も含む" %>
+          <%= form.number_field :number_of_people, readonly: true, :class => "form-control", :placeholder => "例：5" %>
         </div>
       </div>
       <div class="boxes">
@@ -67,8 +67,22 @@
           <hr>
         </div>
       </div>
+      <%# is_odd = true %>
+      <%#= form.fields_for :kenbens do |builder| %>
+      <%# if is_odd %>
+      <!--          <div class="bg-info">-->
+      <%#= render "kenben_fields", f: builder %>
+      <!--          </div>-->
+      <%# else %>
+      <!--          <div class="bg-primary">-->
+      <%#= render "kenben_fields", f: builder %>
+      <!--          </div>-->
+      <%# end %>
+      <%# is_odd = !is_odd %>
+      <%# end %>
       <%= form.fields_for :kenbens do |builder| %>
         <%= render "kenben_fields", f: builder %>
+        <hr/>
       <% end %>
       <%= link_to_add_fields "検便者追加(できない場合は再読み込み(F5)してください)", form, :kenbens %>
 
