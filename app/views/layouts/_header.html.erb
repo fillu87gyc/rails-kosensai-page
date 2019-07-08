@@ -1,49 +1,53 @@
-<header id="header" role="banner">
-  <div class="inner">
-    <div class="logo">
-      <a href="/" title="Kosensai2019" rel="home" id="top-linker">高専祭2019<br /><span>Kosensai2019</span></a>
-      <h1 class="explain">出店者の登録などをするサイトです</h1>
-    </div>
-    <nav id="mainNav">
-      <div class="inner">
-        <a class="menu" id="menu"><span>MENU</span></a>
-        <div class="panel">
-          <ul id="topnav">
-            <li class=" <%= menu_is_current 'index' %> "><a href="/index.html"><strong>トップページ</strong><br /><span>Top</span></a></li>
-            <li><a href="/about" class=" <%= menu_is_current 'news' %>" ><strong>高専祭とは</strong><br /><span>About</span></a>
-              <ul class="sub-menu">
-                <li><a href="#">代表者メッセージ</a></li>
-                <li><a href="http://hirose.nitech-sendai.jp/events/kousensai/2018/">昨年度の高専祭</a></li>
-              </ul>
-            </li>
-            <li class="<%= menu_is_current 'timetable' %>"><a href="/timetable"   ><strong>企画予定</strong><br /><span>Timetable</span></a></li>
-            <li class="<%= menu_is_current 'shop' %>"><a href="/shop"   ><strong>出店内容</strong><br /><span>Shop</span></a></li>
-            <li class="<%= menu_is_current 'access' %>"><a href="/access" ><strong>アクセス</strong><br /><span>Access</span></a></li>
-            <% if user_status %>
-              <li class="<%= menu_is_current_team %>"><a href="/teams/<%= current_user.team.id %>"><strong>アカウント</strong><br /><span>Account</span></a>
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand " href="/">高専祭 HP</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/access">アクセス</a>
+        </li>
+        <li class="nav-item">
+          <!--TODO-->
+          <a class="nav-link disabled" href="#">イベント予定(工事中)</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/shop">出店団体</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            団体メニュー
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <% if user_signed_in? %>
+              <a class="dropdown-item" href="/users/edit"><%= current_user.name %>を編集</a>
             <% else %>
-              <li class="<%= menu_is_current_team %>"><a href="/users/sign_in"><strong>アカウント</strong><br /><span>Account</span></a>
+              <a class="dropdown-item" href="/users/sign_up">新規登録</a>
+              <a class="dropdown-item" href="/users/sign_in">ログイン</a>
             <% end %>
-                <ul class="sub-menu">
-                  <% if !user_signed_in? %>
-                    <li><a href="/users/sign_up">新規登録</a></li>
-                    <li><a href="/users/sign_in">ログイン</a></li>
-                  <% else %>
-                    <li><a href="/users/edit"><%= current_user.name %>を編集</a></li>
-                    <% unless current_user.team.nil? %>
-                      <li><a href="/teams/<%= current_user.team.id %> ">団体詳細画面</a></li>
-                    <% else %>
-                      <li><a href="/teams/new">団体登録</a></li>
-                    <% end %>
-                    <hr style="background-color: #f0f0f0;margin: 0px;border: 0;border-top: 1.5px solid rgba(0, 0, 0, 0.1);">
-                    <li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></li>
-                  <% end %>
-                </ul>
-                </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+            <% if has_team? %>
+              <a class="dropdown-item" href="/teams/<%= current_user.team.id %>"><%= current_user.team.team_name %>
+                の詳細</a>
+              <a class="dropdown-item" href="/teams/<%= current_user.team.id %>/edit"><%= current_user.team.team_name %>
+                を編集</a>
+            <% end %>
+            <% if user_signed_in? %>
+              <div class="dropdown-divider"></div>
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, :class => 'dropdown-item' %>
+            <% end %>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
-</header>
-
+</nav>
