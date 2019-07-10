@@ -13,8 +13,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @shops = Team.all  %>
-        <% @shops.sort{|a,b| a.id <=> b.id } %>
+        <% @shops = Team.order(:id)  %>
         <% @shops.each do |shop| %>
         <tr>
           <th scope="row"><%= shop.id %></th>
