@@ -27,6 +27,12 @@ body.static_pages {
     }
   }
 
+  .about-article{
+    div{
+      padding-bottom: 2em;
+    }
+  }
+
   @media screen and (max-width: 575px) {
     .img-shrink {
       width: 70%;
