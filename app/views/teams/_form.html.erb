@@ -69,26 +69,26 @@
       </div>
       <%# is_odd = true %>
       <%#= form.fields_for :kenbens do |builder| %>
-      <%# if is_odd %>
-      <!--          <div class="bg-info">-->
-      <%#= render "kenben_fields", f: builder %>
-      <!--          </div>-->
-      <%# else %>
-      <!--          <div class="bg-primary">-->
-      <%#= render "kenben_fields", f: builder %>
-      <!--          </div>-->
-      <%# end %>
-      <%# is_odd = !is_odd %>
-      <%# end %>
-      <%= form.fields_for :kenbens do |builder| %>
-        <%= render "kenben_fields", f: builder %>
-        <hr/>
-      <% end %>
-      <%= link_to_add_fields "検便者追加(できない場合は再読み込み(F5)してください)", form, :kenbens %>
+        <%# if is_odd %>
+        <!--          <div class="bg-info">-->
+        <%#= render "kenben_fields", f: builder %>
+        <!--          </div>-->
+        <%# else %>
+        <!--          <div class="bg-primary">-->
+        <%#= render "kenben_fields", f: builder %>
+        <!--          </div>-->
+        <%# end %>
+        <%# is_odd = !is_odd %>
+        <%# end %>
+        <%= form.fields_for :kenbens do |builder| %>
+          <%= render "kenben_fields", f: builder %>
+          <hr/>
+        <% end %>
+        <%= link_to_add_fields "検便者追加(できない場合は再読み込み(F5)してください)", form, :kenbens %>
 
-      <div class="form-group text-center">
-        <%= form.submit "団体登録", :class => "btn btn-primary" %>
-      </div>
-    <% end %>
+        <div class="form-group text-center">
+          <%= form.submit "団体登録(終了しました)",:disabled=>true, :class => "btn btn-primary" %>
+        </div>
+      <% end %>
   </div>
 </div>
